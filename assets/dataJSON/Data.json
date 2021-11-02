@@ -1,0 +1,84 @@
+{
+    "Cards_TLOZ":[
+        {
+            "Titulo": 1,
+            "Imagen": "./assets/IMG/Tarjeta1.jpg"
+        },
+        {
+            "Titulo": 1.1,
+            "Imagen": "./assets/IMG/Tarjeta1.jpg"
+        },
+        {
+            "Titulo": 2,
+            "Imagen": "./assets/IMG/Tarjeta2.jpg"
+        },
+        {
+            "Titulo": 2.1,
+            "Imagen": "./assets/IMG/Tarjeta2.jpg"
+        },
+        {
+            "Titulo": 3,
+            "Imagen": "./assets/IMG/Tarjeta3.jpg"
+        },
+        {
+            "Titulo": 3.1,
+            "Imagen": "./assets/IMG/Tarjeta3.jpg"
+        },
+        {
+            "Titulo": 4,
+            "Imagen": "./assets/IMG/Tarjeta4.jpg"
+        },
+        {
+            "Titulo": 4.1,
+            "Imagen": "./assets/IMG/Tarjeta4.jpg"
+        },
+        {
+            "Titulo": 5,
+            "Imagen": "./assets/IMG/Tarjeta5.jpg"
+        },
+        {
+            "Titulo": 5.1,
+            "Imagen": "./assets/IMG/Tarjeta5.jpg"
+        },
+        {
+            "Titulo": 6,
+            "Imagen": "./assets/IMG/Tarjeta6.jpg"
+        },
+        {
+            "Titulo": 6.1,
+            "Imagen": "./assets/IMG/Tarjeta6.jpg"
+        },
+        {
+            "Titulo": 7,
+            "Imagen": "./assets/IMG/Tarjeta7.jpg"
+        },
+        {
+            "Titulo": 7.1,
+            "Imagen": "./assets/IMG/Tarjeta7.jpg"
+        },
+        {
+            "Titulo": 8,
+            "Imagen": "./assets/IMG/Tarjeta8.jpg"
+        },
+        {
+            "Titulo": 8.1,
+            "Imagen": "./assets/IMG/Tarjeta8.jpg"
+        },
+        {
+            "Titulo": 9,
+            "Imagen": "./assets/IMG/Tarjeta9.jpg"
+        },
+        {
+            "Titulo": 9.1,
+            "Imagen": "./assets/IMG/Tarjeta9.jpg"
+        },
+        {
+            "Titulo": 10,
+            "Imagen": "./assets/IMG/Tarjeta10.jpg"
+        },
+        {
+            "Titulo": 10.1,
+            "Imagen": "./assets/IMG/Tarjeta10.jpg"
+        }
+    ]
+}
