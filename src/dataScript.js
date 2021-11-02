@@ -1,4 +1,4 @@
-fetch('./assets/dataJSON/Data.json')
+fetch("../assets/dataJSON/Data.json")
 .then((response) => response.json())
 .then((data) => iterarCards(data))
 .catch((error) => console.log(error))

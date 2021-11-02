@@ -1,39 +1,39 @@
 @keyframes anim {
   0% {
-    background-image: url(assets/IMG/Background0.jpg);
+    background-image: url(../assets/IMG/Background0.jpg);
   }
   9% {
-    background-image: url(assets/IMG/Background1.jpg);
+    background-image: url(../assets/IMG/Background1.jpg);
   }
   18% {
-    background-image: url(assets/IMG/Background2.jpg);
+    background-image: url(../assets/IMG/Background2.jpg);
   }
   27% {
-    background-image: url(assets/IMG/Background3.jpg);
+    background-image: url(../assets/IMG/Background3.jpg);
   }
   36% {
-    background-image: url(assets/IMG/Background4.jpg);
+    background-image: url(../assets/IMG/Background4.jpg);
   }
   45% {
-    background-image: url(assets/IMG/Background5.jpg);
+    background-image: url(../assets/IMG/Background5.jpg);
   }
   54% {
-    background-image: url(assets/IMG/Background6.jpg);
+    background-image: url(../assets/IMG/Background6.jpg);
   }
   63% {
-    background-image: url(assets/IMG/Background7.jpg);
+    background-image: url(../assets/IMG/Background7.jpg);
   }
   72% {
-    background-image: url(assets/IMG/Background8.png);
+    background-image: url(../assets/IMG/Background8.png);
   }
   81% {
-    background-image: url(assets/IMG/Background9.jpg);
+    background-image: url(../assets/IMG/Background9.jpg);
   }
   90% {
-    background-image: url(assets/IMG/Background10.jpg);
+    background-image: url(../assets/IMG/Tarjeta10.jpg);
   }
   100% {
-    background-image: url(assets/IMG/Background11.jpg);
+    background-image: url(../assets/IMG/Background11.jpg);
   }
 }
 
@@ -123,7 +123,7 @@ footer {
 }
 
 .card-back {
-  background-image: url(assets/IMG/Back.jpg);
+  background-image: url(../assets/IMG/Back.jpg);
   background-size: cover;
   width: 100%;
   display: flex;
@@ -141,4 +141,5 @@ footer {
   border-radius: 10px;
   padding: 1.5em;
   font-weight: bolder;
+  justify-content: center;
 }
