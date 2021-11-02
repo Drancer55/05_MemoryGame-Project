@@ -88,15 +88,14 @@ footer {
 
 #cards {
   padding: 2em;
-  width: 20em;
-  height: 10em;
+  width: auto;
   border-radius: 9px;
   align-items: center;
 }
 
 .card-container {
-  width: 20em;
-  height: 10em;
+  width: 12em;
+  height: 7.3em;
   background-color: transparent;
   perspective: 1000px;
 }
@@ -126,8 +125,6 @@ footer {
   background-image: url(../assets/IMG/Back.jpg);
   background-size: cover;
   width: 100%;
-  display: flex;
-  justify-content: center;
   text-align: center;
   border-radius: 10px;
   padding: 1.5em;
