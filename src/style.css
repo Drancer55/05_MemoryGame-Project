@@ -1,3 +1,4 @@
+/*Fondo facherito que cambia en un lapso de 300s pasando por los 11 background predefinidos*/
 @keyframes anim {
   0% {
     background-image: url(../assets/IMG/Background0.jpg);
@@ -30,13 +31,14 @@
     background-image: url(../assets/IMG/Background9.jpg);
   }
   90% {
-    background-image: url(../assets/IMG/Tarjeta10.jpg);
+    background-image: url(../assets/IMG/Background10.jpg);
   }
   100% {
     background-image: url(../assets/IMG/Background11.jpg);
   }
 }
-
+/*Dentro del Body se agrega el fondo facherito de arriba estilizandolo al gusto,
+de igual forma se establece el VH al 100% para que cubra toda la pantalla*/
 body {
   padding: 0;
   margin: 0;
@@ -65,7 +67,7 @@ body {
 header {
   grid-area: header;
 }
-
+/*Aquí se estiliza el contenedor de las cartas*/
 main {
   grid-area: main;
   display: flex;
@@ -86,14 +88,16 @@ main {
 footer {
   grid-area: footer;
 }
-
+/*Se estilizan las tarjetas como complemento del Main*/
 #cards {
-  padding: 2em;
+  padding: 4em;
   width: auto;
   border-radius: 9px;
   align-items: center;
+  margin-top: -3em;
+  margin-bottom: -5em;
 }
-
+/*Se modifica el tamaño de las tarjetas (podría implementarse un @mediaQuery responsive)*/
 .card-container {
   width: 12em;
   height: 7.3em;
@@ -120,7 +124,8 @@ footer {
   height: 100%;
   -webkit-backface-visibility: hidden; /*IE compatibility*/
 }
-
+/*Se utiliza la misma imagen para el "back" de cada tarjeta, así que no es necesario 
+el que sea dinámico*/
 .card-back {
   background-image: url(../assets/IMG/Back.jpg);
   background-size: cover;
