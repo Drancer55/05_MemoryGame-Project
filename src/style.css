@@ -120,7 +120,7 @@ footer {
 }
 
 .card-portrait:active {
-  transform: scale(0.93);
+  transform: scale(0.9);
   transition: transform 0.2s;
 }
 
@@ -154,4 +154,21 @@ el que sea dinámico*/
   border-radius: 10px;
   padding: 1.5em;
   color: rgb(241, 236, 235);
+}
+
+/* responsive para Ipad*/
+/* Landscape */
+@media only screen and (max-width: 1200px) {
+  .card-container {
+    /* memory game*/
+    width: 6em;
+    height: 3.6em;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .card-container {
+    /* memory game*/
+    width: 12em;
+    height: 7.3em;
+  }
 }

@@ -8,6 +8,7 @@ let tarjetas = document.getElementById("cards")
 //Aquí se "pintan" los datos textuales necesarios para hacer las tarjetas
 let iterarCards = (data) => {
     console.log(data)
+data.Cards_TLOZ.sort(() => Math.random() - 0.5)
     for (const tarjeta of data.Cards_TLOZ) {
         console.log(tarjeta.Titulo)
     tarjetas.innerHTML += `<div class="card-container">
@@ -24,9 +25,31 @@ portadaTarjeta.style.backgroundSize = "cover"
 
 //Voltear las cartas
 const cartas = document.querySelectorAll('.card-portrait');
+let Gamer1 = document.getElementById('P1')
+let Gamer2 = document.getElementById('P2')
+let Score1 = document.getElementById('ScoreP1')
+let Score2 = document.getElementById('ScoreP2')
+
+/*
+let botonPlay = document.getElementById('botonPlay')
+botonPlay.addEventListener('click', () => {
+    document.getElemetnById('Pantalla1').hidden = true (pantallas )
+    document.getElementById('Pantalla2').hidden = false
+})
+*/
+
+Gamer1.style.color = '#e35477'
+Score1.innerHTML= "0";
+Score2.innerHTML= "0";
+
 let hasFlippedCard = false; //booleano
 let lockBoard = false; //Esta propiedad sirve para "flipear" dos cartas a la vez y no más por turno
 let firstCard, secondCard;
+
+let turno = true;
+let puntuacionP1 = 0;
+let puntuacionP2 = 0;
+
 //Flip es, en inglés "voltear"
 function flipCard() {
     if (lockBoard) return; 
@@ -48,10 +71,28 @@ function flipCard() {
 //¿cómo hacer Match?
 function checkForMatch () {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
-//Hace match!!
-    isMatch ? disableCards () : unflipCards ();
+    if (turno){
+    Gamer1.style.color = '#518539'
+    Gamer2.style.color = '#d4d40f'
+    turno= false
+} else{
+    turno = true
+    Gamer1.style.color = '#d4d40f'
+    Gamer2.style.color = '#518539'
 }
-
+//Hace match!!
+    if (isMatch){
+        disableCards ()
+        if (turno) {
+        puntuacionP1 ++;
+        console.log(puntuacionP1)
+        } else{
+        puntuacionP2 ++;
+        console.log(puntuacionP2)
+        }
+    }else{ unflipCards ()
+    }
+}
 function disableCards () {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -74,12 +115,12 @@ function resetBoard(){
     [firstCard, secondCard] = [null, null];
 }
 //Función que pretende barajar el orden de las tarjetas
-(function shuffle () {
+/*(function shuffle () {
     cartas.forEach(card => {
         let randomPos = Math.floor(Math.random() * 20);
         card.style.order = randomPos;
     });
-})();
+})();*/
 cartas.forEach(card => card.addEventListener('click', flipCard))
     }
 };
