@@ -201,7 +201,7 @@ footer {
   background-color: rgba(11, 11, 36, 0.609);
   justify-content: space-evenly;
   border-top: 3px solid rgba(33, 18, 41, 0.705);
-  margin-bottom: -30px;
+  margin-bottom: 1px;
   color: aliceblue;
 }
 
@@ -228,8 +228,8 @@ footer i:hover {
   width: auto;
   border-radius: 9px;
   align-items: center;
-  margin-top: -2.5em;
-  margin-bottom: -5em;
+  margin-top: -3.3em;
+  margin-bottom: -2.3em;
 }
 /*Se modifica el tamaño de las tarjetas (podría implementarse un @mediaQuery responsive)*/
 .card-container {
