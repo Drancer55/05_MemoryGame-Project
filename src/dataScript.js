@@ -1,3 +1,12 @@
+document.getElementById('pantalla1').hidden= false;
+document.getElementById('pantalla2').hidden= true;
+
+let startGame = document.getElementById('start')
+startGame.addEventListener('click', () => {
+    document.getElementById('pantalla1').hidden = true
+    document.getElementById('pantalla2').hidden = false 
+})
+
 //Gracias al fetch se puede establecer comunicación con los datos del JSON
 fetch("../assets/dataJSON/Data.json")
 .then((response) => response.json())
@@ -30,15 +39,7 @@ let Gamer2 = document.getElementById('P2')
 let Score1 = document.getElementById('ScoreP1')
 let Score2 = document.getElementById('ScoreP2')
 
-/*
-let botonPlay = document.getElementById('botonPlay')
-botonPlay.addEventListener('click', () => {
-    document.getElemetnById('Pantalla1').hidden = true (pantallas )
-    document.getElementById('Pantalla2').hidden = false
-})
-*/
-
-Gamer1.style.color = '#e35477'
+Gamer1.style.color = '#f5f507'
 Score1.innerHTML= "0";
 Score2.innerHTML= "0";
 
@@ -72,23 +73,25 @@ function flipCard() {
 function checkForMatch () {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
     if (turno){
-    Gamer1.style.color = '#518539'
-    Gamer2.style.color = '#d4d40f'
-    turno= false
-} else{
-    turno = true
-    Gamer1.style.color = '#d4d40f'
-    Gamer2.style.color = '#518539'
-}
+        turno= false
+        Gamer1.style.color = '#1f37e0'
+        Gamer2.style.color = '#8ce309'
+    } else{
+        turno = true
+        Gamer1.style.color = '#8ce309'
+        Gamer2.style.color = '#f22727'
+        }
 //Hace match!!
     if (isMatch){
         disableCards ()
         if (turno) {
         puntuacionP1 ++;
         console.log(puntuacionP1)
+        document.getElementById('ScoreP1').innerHTML = puntuacionP1
         } else{
         puntuacionP2 ++;
         console.log(puntuacionP2)
+        document.getElementById('ScoreP2').innerHTML = puntuacionP2
         }
     }else{ unflipCards ()
     }

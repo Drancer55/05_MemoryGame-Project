@@ -1,3 +1,12 @@
+/*Fonts importadas desde Google
+font-family: 'Caveat', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Princess Sofia', cursive;
+font-family: 'Tangerine', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Gloria+Hallelujah&family=Indie+Flower&family=Press+Start+2P&family=Princess+Sofia&family=Tangerine:wght@700&display=swap");
+
 /*Fondo facherito que cambia en un lapso de 300s pasando por los 11 background predefinidos*/
 @keyframes anim {
   0% {
@@ -39,7 +48,75 @@
 }
 /*Dentro del Body se agrega el fondo facherito de arriba estilizandolo al gusto,
 de igual forma se establece el VH al 100% para que cubra toda la pantalla*/
-body {
+#pantalla1 {
+  background-image: url(../assets/IMG/Screen1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-origin: content-box;
+  height: 100vh;
+}
+#pantalla1 h1 {
+  font-family: "Tangerine", cursive;
+  font-size: 5.5rem;
+  color: rgba(146, 148, 9, 0.925);
+  text-shadow: 2px 2px 2px black;
+}
+
+#pantalla1 input {
+  font-family: "Indie Flower", cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  color: black;
+  background-color: rgba(74, 134, 59, 0.356);
+  margin: 1.5em;
+  text-align: center;
+}
+
+#pantalla1 button {
+  font-family: "Princess Sofia", cursive;
+  font-size: 1.5rem;
+  text-shadow: 2px 3px 2px black;
+  background-color: rgba(156, 86, 28, 0.609);
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  color: #ff9204;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0.5em;
+  width: 5em;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#pantalla1 button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#pantalla1 button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+#pantalla1 button:hover span {
+  transform: scale(1.2);
+  color: #75ff04;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#pantalla2 {
   padding: 0;
   margin: 0;
   width: auto;
@@ -66,6 +143,12 @@ body {
 
 header {
   grid-area: header;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 3em;
+  font-style: italic;
+  font-weight: bolder;
+  color: #59d623d0;
+  text-shadow: 3px 3px 3px rgba(24, 51, 21, 0.89);
 }
 /*Aquí se estiliza el contenedor de las cartas*/
 main {
@@ -79,14 +162,65 @@ main {
 
 .aside1 {
   grid-area: aside1;
+  font-family: "Press Start 2P", cursive;
+}
+
+.aside1 h3 {
+  font-size: 1rem;
+  text-shadow: 2px 2px 2px rgba(56, 55, 55, 0.712);
+  text-align: right;
+}
+
+.aside1 h4 {
+  text-align: center;
+  color: aliceblue;
+  text-shadow: 2px 2px 2px rgb(3, 63, 63);
 }
 
 .aside2 {
   grid-area: aside2;
+  font-family: "Press Start 2P", cursive;
+}
+
+.aside2 h3 {
+  font-size: 1rem;
+  text-shadow: 2px 2px 2px rgba(56, 55, 55, 0.712);
+  text-align: left;
+}
+.aside2 h4 {
+  text-align: center;
+  color: aliceblue;
+  text-shadow: 2px 2px 2px rgb(3, 63, 63);
 }
 
 footer {
   grid-area: footer;
+}
+
+footer {
+  background-color: rgba(11, 11, 36, 0.609);
+  justify-content: space-evenly;
+  border-top: 3px solid rgba(33, 18, 41, 0.705);
+  margin-bottom: -30px;
+  color: aliceblue;
+}
+
+footer h5 {
+  font-size: 0.95rem;
+  font-weight: 1.125rem;
+  text-align: center;
+  text-shadow: 2px 2px 2px #180e01a6;
+}
+
+footer i {
+  color: rgb(17, 63, 136);
+  vertical-align: middle;
+}
+
+footer i:hover {
+  transform: scale(1.3);
+  transition: transform 0.5s ease-out;
+  color: #ff9204;
 }
 /*Se estilizan las tarjetas como complemento del Main*/
 #cards {
@@ -94,7 +228,7 @@ footer {
   width: auto;
   border-radius: 9px;
   align-items: center;
-  margin-top: -3em;
+  margin-top: -2.5em;
   margin-bottom: -5em;
 }
 /*Se modifica el tamaño de las tarjetas (podría implementarse un @mediaQuery responsive)*/
@@ -156,19 +290,24 @@ el que sea dinámico*/
   color: rgb(241, 236, 235);
 }
 
-/* responsive para Ipad*/
-/* Landscape */
-@media only screen and (max-width: 1200px) {
-  .card-container {
-    /* memory game*/
-    width: 6em;
-    height: 3.6em;
+html {
+  display: block;
+}
+@media only screen and (orientation: portrait) {
+  html {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
   }
 }
-@media only screen and (min-width: 500px) {
-  .card-container {
-    /* memory game*/
-    width: 12em;
-    height: 7.3em;
+@media only screen and (orientation: landscape) {
+  html {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
