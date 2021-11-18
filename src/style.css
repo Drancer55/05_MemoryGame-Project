@@ -1,4 +1,4 @@
-/*Fonts importadas desde Google
+/*Fonts importadas desde Google utilizadas a lo largo del documento
 font-family: 'Caveat', cursive;
 font-family: 'Gloria Hallelujah', cursive;
 font-family: 'Indie Flower', cursive;
@@ -7,7 +7,7 @@ font-family: 'Princess Sofia', cursive;
 font-family: 'Tangerine', cursive; */
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Gloria+Hallelujah&family=Indie+Flower&family=Press+Start+2P&family=Princess+Sofia&family=Tangerine:wght@700&display=swap");
 
-/*Fondo facherito que cambia en un lapso de 300s pasando por los 11 background predefinidos*/
+/*Fondo fachero que cambia en un lapso de 300s pasando por los 11 background predefinidos*/
 @keyframes anim {
   0% {
     background-image: url(../assets/IMG/Background0.jpg);
@@ -46,7 +46,7 @@ font-family: 'Tangerine', cursive; */
     background-image: url(../assets/IMG/Background11.jpg);
   }
 }
-/*Dentro del Body se agrega el fondo facherito de arriba estilizandolo al gusto,
+/*Dentro del Body se agrega el fondo fachero de arriba estilizandolo al gusto,
 de igual forma se establece el VH al 100% para que cubra toda la pantalla*/
 #pantalla1 {
   background-image: url(../assets/IMG/Screen1.jpg);
@@ -205,6 +205,19 @@ footer {
   color: aliceblue;
 }
 
+#restart {
+  background-color: #5d0606;
+  font-family: "Tangerine", cursive;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  color: rgb(231, 203, 203);
+}
+
+#restart :hover {
+  background-color: rgba(228, 105, 18, 0.746);
+  color: #75ff04;
+}
+
 footer h5 {
   font-size: 0.95rem;
   font-weight: 1.125rem;
@@ -254,7 +267,7 @@ footer i:hover {
 }
 
 .card-portrait:active {
-  transform: scale(0.9);
+  transform: scale(0.87);
   transition: transform 0.2s;
 }
 
