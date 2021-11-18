@@ -1,42 +1,64 @@
 document.getElementById('pantalla1').hidden= false;
 document.getElementById('pantalla2').hidden= true;
+document.getElementById('pantalla3').hidden= true;
 //música de intro
 let introMusic = () => {
     const intro = document.getElementById(`intro`);
     intro.loop = true;
     intro.volume = 0.7;
     intro.play();
-}
+};
 introMusic()
 //pausa de música de intro
 let pausaIntro = () => {
     const pausa = document.getElementById('intro')
     pausa.pause();
     pausa.currentTime = 0;    
-}
+};
 //musica de gameplay
 let gamePlayMusic = () => {
     const timeToPlay = document.getElementById('play');
     timeToPlay.loop = true;
     timeToPlay.volume = 0.7;
     timeToPlay.play();
-}
+};
 //pausa de música de gameplay
 let pausaGamePlayMusic = () => {
     const pausa2 = document.getElementById('play')
     pausa2.pause();
     pausa2.currentTime = 0;
-}
+};
+//musica de pantalla de ganador
+let musicChampions = () => {
+    const final = document.getElementById('winner')
+    final.loop = false;
+    final.play();
+};
+//pausa de musica pantalla de ganador
+let pausaMusicChampions = () =>{
+    const pausa3 = document.getElementById('winner')
+    pausa3.pause();
+    pausa3.currentTime = 0;
+};
 //sonido de match de tarjetas
 let matchSound = () => {
     const isMatchSound = document.getElementById('match')
     isMatchSound.play();
-}
+};
 //sonido si las tarjetas no hacen match
 let noMatchSound = () => {
     const isNotMatchSound = document.getElementById('noMatch')
     isNotMatchSound.play();
-}        
+};      
+//Anunciando al ganador
+let tarara = () => {
+    const champ = document.getElementById('champ')
+    champ.play();
+};
+let tap = () => {
+    const singleTap = document.getElementById('bum')
+    singleTap.play();
+};
 //Seccion de las pantallas principales
 let startGame = document.getElementById('start')
 startGame.addEventListener('click', () => {
@@ -45,10 +67,11 @@ startGame.addEventListener('click', () => {
     document.getElementById('pantalla2').hidden = false;
     gamePlayMusic();
     let Name1 = document.getElementById('Player1').value;//Nombre del Gamer1
-    P1.innerHTML = "P1: " + Name1;
+    P1.innerHTML = "P1: " + Name1; 
     let Name2 = document.getElementById('Player2').value;//Nombre del Gamer1
     P2.innerHTML = "P2: " + Name2;
-})
+});
+
 //"cards" es el contenedor del "Gameplay" en el que se iteran las tarjetas
 let tarjetas = document.getElementById("cards")
 //Gracias al fetch se puede establecer comunicación con los datos del JSON
@@ -85,8 +108,8 @@ let Score1 = document.getElementById('ScoreP1');
 let Score2 = document.getElementById('ScoreP2');
 //Cada jugador inicia en 0 y se imprime literalmente en el interface
 Gamer1.style.color = '#f5f507'
-Score1.innerHTML= "0";
-Score2.innerHTML= "0";
+Score1.innerHTML = "0";
+Score2.innerHTML = "0";
 //Estas variables se declaran aquí para usarse, posteriormente, a lo largo del JS
 let hasFlippedCard = false; //booleano
 let lockBoard = false; //Esta variable sirve para "flipear" dos cartas a la vez y no más por turno
@@ -100,6 +123,7 @@ function flipCard() {
     if (lockBoard) return; 
     if(this === firstCard) return;
     this.classList.add('flip')
+    tap();
     if (!hasFlippedCard) {
 //PrimerClick
         hasFlippedCard = true;
@@ -112,8 +136,26 @@ function flipCard() {
 }
 //Aquí se determina hasta cuando se acaba el juego
 let gameOver = () => {
+    setTimeout(() => {
     pares++; 
-    if(pares==10) alert("game over");//puntuacion1 + puntuacion2 == 10 
+    if(pares==10) { //puntuacion1 + puntuacion2 == 10 
+        pausaGamePlayMusic();
+        tarara();
+        document.getElementById('pantalla1').hidden = true;
+        document.getElementById('pantalla2').hidden = true;
+        document.getElementById('pantalla3').hidden = false;
+        musicChampions();
+        if (puntuacionP1 > puntuacionP2) {
+            champion.innerHTML =  `The winner is P1: <br><center class="a">${document.getElementById("Player1").value}</center>`;
+        } else {
+            if (puntuacionP1 < puntuacionP2) {
+                champion.innerHTML = `The winner is P2: <br><center class="b">${document.getElementById("Player2").value}</center>`;
+            } else {
+                champion.innerHTML = `<center class="c">It's a draw, do you want rematch?<center>`
+            }
+        }
+    };
+}, 900)
 }
 //¿cómo hacer Match?
 function checkForMatch () {
@@ -169,6 +211,7 @@ function resetBoard(){
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 };
+
 cartas.forEach(card => card.addEventListener('click', flipCard))
 function checkForMatch2 () { //Se declara un segundo checkForMatch para que no se pierda el ritmo de colores al reiniciar el juego
     if (turno) {
@@ -189,7 +232,8 @@ function checkForMatch2 () { //Se declara un segundo checkForMatch para que no s
             }
             unflipCards () 
     }; console.log(checkForMatch2);
-let restart = document.getElementById(`restart`) //variable auxiliar al reiniciar el juego
+
+let restart = document.getElementById('restart') //variable auxiliar al reiniciar el juego
     restart.addEventListener('click', () => {
         Gamer1.style.color = '#f5f507';
         Gamer2.style.color = '#000000'
@@ -204,7 +248,51 @@ let restart = document.getElementById(`restart`) //variable auxiliar al reinicia
         puntuacionP2 = 0;
         cartas.forEach(card => card.addEventListener('click', flipCard))
         cartas.forEach(card => card.classList.remove('flip'));
+        const cartota = document.querySelectorAll('.card-container');
         //shuffle;
-        
+        function shuffle() {
+            cartota.forEach((card) => {
+            let randomPos = Math.floor(Math.random() * 20);
+            console.log(randomPos);
+            card.style.order = randomPos;
+        });
+        }
+        setTimeout(() => {
+        shuffle();
+        }, 1000);
         });    
+
+        let restart2 = document.getElementById('restart2') //variable auxiliar al reiniciar el juego
+        restart2.addEventListener('click', () => {
+        pausaMusicChampions();
+        gamePlayMusic();
+        document.getElementById('pantalla1').hidden = true;
+        document.getElementById('pantalla2').hidden = false;
+        document.getElementById('pantalla3').hidden = true;
+        Gamer1.style.color = '#f5f507';
+        Gamer2.style.color = '#000000'
+        Score1.innerHTML= "0";
+        Score2.innerHTML= "0";
+        hasFlippedCard = false; //booleano
+        lockBoard = false; //Esta variable sirve para "flipear" dos cartas a la vez y no más por turno
+        firstCard, secondCard;
+        pares = 0; //checar
+        turno = true;
+        puntuacionP1 = 0;
+        puntuacionP2 = 0;
+        cartas.forEach(card => card.addEventListener('click', flipCard))
+        cartas.forEach(card => card.classList.remove('flip'));
+        const cartota = document.querySelectorAll('.card-container');
+        //shuffle;
+        function shuffle() {
+            cartota.forEach((card) => {
+            let randomPos = Math.floor(Math.random() * 20);
+            console.log(randomPos);
+            card.style.order = randomPos;
+        });
+        }
+        setTimeout(() => {
+        shuffle();
+        }, 1000);
+        }); console.log(restart2)
 };

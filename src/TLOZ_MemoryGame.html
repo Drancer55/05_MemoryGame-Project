@@ -45,7 +45,7 @@
 <!----------Footer del "Gameplay"--------------------------------------------------->
             <footer>
                 <h5><center> 
-                    <button id="restart" style="vertical-align:middle"><span>Restart</span></button>
+                    <button id="restart" style="vertical-align:middle"><span>Reset game</span></button>
                     &#169 CDMX MMXXI Fan-art "TLOZ: Memory card Game" Created by Oscar Ruiz
 <!----------Chismesito (contacto)-------------------------------------------------->
                     <a href="http://twitter.com/DrancerLeCourt?s=09" target="_blank" class="btn"><i class="fab fa-twitter"></i></a>
@@ -53,14 +53,22 @@
                 </center></h5>
             </footer>
         </section>
+<!----------Pantalla de gnador (3)------------------------------------------------->
+        <section id="pantalla3">
+            <button id="restart2" style="vertical-align:middle"><span>Rematch</span></button>
+            <button id="mainMenu" style="vertical-align:middle" onclick="location.reload()"><span>Main menu</span></button>
+            <div id="champion"></div>
+        </section>
+
 <!----------Archivos de audio------------------------------------------------------>
         <section>
                 <audio id="intro" src="../assets/Audio/TheGreatDekuTree.mp3"></audio>
                 <audio id="play" src="../assets/Audio/TLOZ_ClassicalGuitarMedley.mp3"></audio>
-                <audio id="winner" src="../assets/Audio/Epilogue.mp3"></audio>
+                <audio id="winner" src="../assets/Audio/EndingTheme.mp3"></audio>
                 <audio id="match" src="../assets/Audio/Match.mp3"></audio>
                 <audio id="noMatch" src="../assets/Audio/Nope.mp3"></audio>
-                
+                <audio id="champ" src="../assets/Audio/Tara.mp3"></audio>
+                <audio id="bum" src="../assets/Audio/Bum.mp3"></audio>
         </section>
 <!----------JavaScript------------------------------------------------------------->
         <script src="dataScript.js" async defer></script>

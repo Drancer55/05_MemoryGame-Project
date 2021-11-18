@@ -206,16 +206,43 @@ footer {
 }
 
 #restart {
-  background-color: #5d0606;
-  font-family: "Tangerine", cursive;
-  font-weight: bolder;
-  font-size: 1.2rem;
-  color: rgb(231, 203, 203);
+  font-family: "Indie Flower", cursive;
+  font-size: 1rem;
+  text-shadow: 3px 3px 3px black;
+  background-color: rgba(82, 26, 22, 0.609);
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5em;
+  width: 10em;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
-#restart :hover {
-  background-color: rgba(228, 105, 18, 0.746);
-  color: #75ff04;
+#restart span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#restart span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+#restart:hover span {
+  transform: scale(1.2);
+  color: #00f629;
+}
+
+#restart:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 footer h5 {
@@ -301,6 +328,78 @@ el que sea dinámico*/
   border-radius: 10px;
   padding: 1.5em;
   color: rgb(241, 236, 235);
+}
+
+#pantalla3 {
+  background-image: url("../assets/IMG/Screen3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-origin: content-box;
+  height: 100vh;
+}
+
+#pantalla3 #champion {
+  font-family: "Tangerine", cursive;
+  font-weight: bolder;
+  font-size: 7rem;
+  color: #15db15;
+}
+
+#pantalla3 #champion .a {
+  color: #ff0404;
+  margin-top: 2vh;
+}
+
+#pantalla3 #champion .b {
+  color: #0804ff;
+  margin-top: 2vh;
+}
+
+#pantalla3 #champion .c {
+  color: #eeff04;
+  font-weight: bolder;
+  margin-top: 20vh;
+}
+
+#pantalla3 button {
+  justify-content: center;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 3px rgba(78, 77, 7, 0.781);
+  background-color: rgba(136, 94, 3, 0.596);
+  display: inline-block;
+  border-radius: 15px;
+  border: double white 3px;
+  color: #c77f0c;
+  text-align: center;
+  padding: 0.5em;
+  width: 10.3em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: auto;
+  font-family: "Princess Sofia", cursive;
+}
+
+#pantalla3 button span {
+  position: relative;
+  transition: 0.5s;
+}
+
+#pantalla3 button span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 1s;
+}
+
+#pantalla3:hover button span {
+  transform: scale(1.2);
+  color: #ebb606;
+}
+
+#pantalla3:hover button span:after {
+  opacity: 1;
+  right: 0;
 }
 
 html {
